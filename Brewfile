@@ -7,6 +7,7 @@ tap 'homebrew/bundle'
 cask 'alfred'
 cask 'dash'
 
+cask 'spectacle'
 cask 'iterm2'
 cask 'virtualbox'
 cask 'vagrant'
@@ -22,7 +23,6 @@ cask 'macdown'
 
 cask 'google-chrome'
 cask 'firefox'
-# cask ''
 # cask 'pgweb'
 
 cask alfred link
