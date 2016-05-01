@@ -1,3 +1,5 @@
+cask_args appdir: '/Applications'
+
 tap 'caskroom/cask'
 tap 'caskroom/versions'
 tap 'homebrew/bundle'
@@ -12,7 +14,7 @@ cask 'docker'
 cask 'terraform'
 # cask 'miniconda'
 
-cask 'sublime'
+cask 'sublime-text3'
 cask 'pycharm-ce'
 cask 'rstudio'
 cask 'atom'
