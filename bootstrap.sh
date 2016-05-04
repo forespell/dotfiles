@@ -42,7 +42,7 @@ cp preferences/Preferences.sublime-settings ~/Library/Application\ Support/Subli
 cp preferences/Preferences.sublime-settings ~/Library/Application\ Support/Sublime\ Text*/Packages/User/Package\ Control.sublime-settings 2> /dev/null
 
 # Copy the .bash_profile to the user's home folder
-cp .bash_* ~
+cp preferences/.bash_* ~
 
 # Use a modified version of the Monokai theme by default in Terminal.app
 SCRIPT="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
