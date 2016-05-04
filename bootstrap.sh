@@ -6,16 +6,14 @@ sudo -v
 # Keep-alive: update existing `sudo` time stamp until this script has finished
 while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
-# Configure the system
-source configure.sh
-
 # Install Miniconda
 if [ ! $(which conda) ]; then
     installer=Miniconda3-latest-MacOSX-x86_64.sh
     curl --progress-bar https://repo.continuum.io/miniconda/$installer --output $installer
     bash $installer -b
-    conda update --yes --all
     rm $installer
+    conda update --yes --all
+    conda install anaconda --yes
 fi
 
 # Install Homebrew
@@ -26,6 +24,9 @@ fi
 # Install everything in the Brewfile
 brew tap homebrew/bundle
 brew bundle
+
+# Configure the system
+source configure.sh
 
 # Install subl as a command line tool
 sudo ln -s /Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl /usr/bin/subl
