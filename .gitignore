@@ -1,0 +1,10 @@
+.DS_Store
+/*
+!preferences/
+!.bash_profile
+!.bash_prompt
+!bootstrap.sh
+!Brewfile
+!configure.sh
+!.gitignore
+!README.md

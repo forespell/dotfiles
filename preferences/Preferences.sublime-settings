@@ -1,0 +1,8 @@
+{
+    "font_size": 16,
+    "rulers": [80],
+    "show_encoding": true,
+    "tab_size": 4,
+    "translate_tabs_to_spaces": true,
+    "word_wrap": true
+}
