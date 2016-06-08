@@ -1,6 +1,4 @@
-# Forespell development enviroment setup
-
-## Instructions
+## Forespell development enviroment setup
 
 ### Installation
 
