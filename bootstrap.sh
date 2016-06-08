@@ -17,7 +17,7 @@ if [ ! $(which conda) ]; then
 fi
 
 # Install Homebrew
-if [ ! $(which docker) ]; then
+if [ ! $(which brew) ]; then
     /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 fi
 
@@ -121,9 +121,6 @@ sudo chflags nohidden /Volumes
 defaults write com.apple.dock autohide-delay -float 0
 defaults write com.apple.dock autohide-time-modifier -float 0
 defaults write com.apple.dock autohide -bool true
-
-# Safari: allow hitting the Backspace key to go to the previous page in history
-defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2BackspaceKeyNavigationEnabled -bool true
 
 # Safari: enable the Develop menu and the Web Inspector
 defaults write com.apple.Safari IncludeDevelopMenu -bool true
