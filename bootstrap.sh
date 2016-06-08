@@ -6,6 +6,13 @@ sudo -v
 # Keep-alive: update existing `sudo` time stamp until this script has finished
 while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
+# Copy the .bash_profile to the user's home folder and source it
+cp --no-clobber preferences/.bash_* ~
+source ~/.bash_profile
+
+# Configure the system
+source configure.sh
+
 # Install Miniconda
 if [ ! $(which conda) ]; then
     installer=Miniconda3-latest-MacOSX-x86_64.sh
@@ -25,9 +32,6 @@ fi
 brew tap homebrew/bundle
 brew bundle
 
-# Configure the system
-source configure.sh
-
 # Install subl as a command line tool
 sudo ln -s /Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl /usr/bin/subl
 
@@ -40,9 +44,6 @@ curl --progress-bar "$src/${pc/ /%20}" --output "$dest/$pc"
 # Install Sublime Text preferences and Package Control packages
 cp preferences/Preferences.sublime-settings ~/Library/Application\ Support/Sublime\ Text*/Packages/User/Preferences.sublime-settings 2> /dev/null
 cp preferences/Preferences.sublime-settings ~/Library/Application\ Support/Sublime\ Text*/Packages/User/Package\ Control.sublime-settings 2> /dev/null
-
-# Copy the .bash_profile to the user's home folder
-cp preferences/.bash_* ~
 
 # Use a modified version of the Monokai theme by default in Terminal.app
 SCRIPT="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
