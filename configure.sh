@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-# Set computer name (as done via System Preferences → Sharing) if the name is similar to "User's Macbook Pro"
-if scutil --get ComputerName | grep -q "'"; then
+# Set computer name (as done via System Preferences → Sharing) if the name is similar to "Users-Macbook"
+if scutil --get ComputerName | grep -q "-"; then
     read -p "Computer name (single lower case word): " computer
     sudo scutil --set ComputerName "$computer"
     sudo scutil --set HostName "$computer"
